@@ -42,7 +42,7 @@ public class WebSecurityConfig {
         http
                 .cors(cors -> cors.configurationSource(request -> {
                     var corsConfig = new org.springframework.web.cors.CorsConfiguration();
-                    corsConfig.addAllowedOrigin("http://localhost:3000"); // Chỉ định origin cụ thể
+                    corsConfig.addAllowedOrigin("*"); // Chỉ định origin cụ thể
                     corsConfig.addAllowedMethod("*");
                     corsConfig.addAllowedHeader("*");
                     corsConfig.setAllowCredentials(true); // Cho phép credentials
