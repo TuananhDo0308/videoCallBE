@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: demo
+
+  datasource:
+    url: jdbc:mysql://localhost:3307/nutrition_db
+    username: root
+    password: Tuan@nh04
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+security:
+  jwt:
+    secret-key: "x7k9p2m4-q8w3r5t6-y1u0i2o3-j4h5g6f7d8s9a"
