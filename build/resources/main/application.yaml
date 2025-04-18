@@ -3,7 +3,7 @@ spring:
     name: demo
 
   datasource:
-    url: jdbc:mysql://localhost:3307/nutrition_db
+    url: jdbc:mysql://mysql:3307/nutrition_db
     username: root
     password: Tuan@nh04
     driver-class-name: com.mysql.cj.jdbc.Driver
