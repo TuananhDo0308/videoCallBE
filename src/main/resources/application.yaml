@@ -15,3 +15,12 @@ spring:
 security:
   jwt:
     secret-key: "x7k9p2m4-q8w3r5t6-y1u0i2o3-j4h5g6f7d8s9a"
+
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-store: classpath:keystore.p12
+    key-store-password: Tuan@nh04
+    key-alias: springboot
+    key-store-type: PKCS12
