@@ -46,11 +46,12 @@ public class RoomChatService {
         RoomChat roomChat = new RoomChat();
         roomChat.setName(roomChatDto.getName());
         roomChat.setPassword(roomChatDto.getPassword());
-        roomChat.setPrivate(roomChatDto.isPrivate());
+        roomChat.setPrivateRoom(roomChatDto.isPrivate());
         roomChat.setCode(generateRoomCode());
         roomChat.setCreator(creator);
 
         roomChat.setCreator(creator);
+        System.out.println(roomChatDto.isPrivate());
         return roomChatRepository.save(roomChat);
     }
 
@@ -69,7 +70,11 @@ public class RoomChatService {
 
         RoomChat roomChat = roomChatRepository.findByCode(joinRoomRequest.getCode())
                 .orElseThrow(() -> new RuntimeException("Room not found or invalid code"));
-
+        if (roomChat.isPrivateRoom()) {
+            if (!roomChat.getPassword().equals(joinRoomRequest.getPassword())) {
+                throw new RuntimeException("Incorrect room password");
+            }
+        }
         // Kiểm tra xem user đã tham gia phòng chưa
         if (roomChat.getParticipants().contains(user)) {
             throw new RuntimeException("User already in the room");

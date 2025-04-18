@@ -1,6 +1,7 @@
 package com.example.demo.DTO;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.annotation.Nullable;
 import lombok.Data;
 
@@ -10,5 +11,6 @@ public class RoomChatDto {
 
     @Nullable
     private String password;
+    @JsonProperty("isPrivate")
     private boolean isPrivate;
 }

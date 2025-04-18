@@ -27,7 +27,9 @@ public class RoomChat {
     private String name;
     @JsonIgnore
     private String password;
-    private boolean isPrivate;
+
+    private boolean privateRoom;
+
     private String code;
 
     @ManyToOne(fetch = FetchType.LAZY)

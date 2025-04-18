@@ -20,6 +20,7 @@ public class RoomChatController {
     @PostMapping("")
     public ResponseEntity<RoomChat> createRoom(@RequestBody RoomChatDto room, Authentication authentication) {
         String username  = authentication.getName();
+        System.out.println(room.isPrivate());
         return ResponseEntity.ok(roomChatService.createRoom(room, username));
     }
 

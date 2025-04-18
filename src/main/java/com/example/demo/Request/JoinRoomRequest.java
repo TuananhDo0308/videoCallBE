@@ -6,4 +6,5 @@ import lombok.Data;
 @Data
 public class JoinRoomRequest {
     private String code;
+    private String password;
 }
